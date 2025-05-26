@@ -1,0 +1,142 @@
+/*Esse programa gera 10 números aleatórios e usa dois métodos,
+bubble sort e insertion sort, pra ordenar esses números de forma decrescente e crescente.
+Cada método copia o vetor original para manter os dados intactos, 
+organiza essa cópia conforme a lógica do algoritmo, e depois mostrao resultado na tela, 
+permitindo comparar como cada técnica ordena os números de formas diferentes.*/
+
+//importaçao das bibliotecas que serão utilizadas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo o tamanho do vetor com uma constante
+#define VALOR  10
+
+// definindo as variaveis que serao utilizadas
+int i, numeros[VALOR], copia[VALOR], contador, aux;
+
+//funçao bubblesort para organizar o vetor de forma crescente
+void bubble_sort_crescente() {
+    // copiar o vetor original para a cópia
+    for(i = 0; i < VALOR; i++) {
+        copia[i] = numeros[i];
+    }
+
+    for (contador = 1; contador < VALOR; contador++) {
+        for (i = 0; i < VALOR - 1; i++) {
+            if (copia[i] > copia[i + 1]) {
+                aux = copia[i];
+                copia[i] = copia[i + 1];
+                copia[i + 1] = aux;
+            }
+        }
+    }
+
+    //printa os numeros organizados de forma crescente
+    printf("\n------------------------------------------------------\n");
+    printf("\nVetor organizado de forma crescente com Bubble Sort:\n");
+    for(i = 0; i < VALOR; i++) {
+        printf("%d - %d\n", i, copia[i]);
+    }
+}
+
+//funçao bubblesort para organizar o vetor de forma decrescente
+void bubble_sort_decrescente() {
+    // copiar o vetor original para a cópia
+    for(i = 0; i < VALOR; i++) {
+        copia[i] = numeros[i];
+    }
+
+    for (contador = 1; contador < VALOR; contador++) {
+        for (i = 0; i < VALOR - 1; i++) {
+            if (copia[i] < copia[i + 1]) {
+                aux = copia[i];
+                copia[i] = copia[i + 1];
+                copia[i + 1] = aux;
+            }
+        }
+    }
+
+    //printa os numeros na tela de forma decrescente
+    printf("\n------------------------------------------------------");
+    printf("\nVetor organizado de forma decrescente com Bubble Sort:\n");
+    for(i = 0; i < VALOR; i++) {
+        printf("%d - %d\n", i, copia[i]);
+    }
+}
+
+//função insertion sort crescente
+void insertion_sort_crescente() {
+    // copiar o vetor original para a cópia
+    for(i = 0; i < VALOR; i++) {
+        copia[i] = numeros[i];
+    }
+
+    int chave, j;
+    for(i = 1; i < VALOR; i++) {
+        chave = copia[i];
+        j = i - 1;
+        while(j >= 0 && copia[j] > chave) {
+            copia[j + 1] = copia[j];
+            j--;
+        }
+        copia[j + 1] = chave;
+    }
+
+    //printa os numeros organizados de forma crescente
+    printf("\n------------------------------------------------------");
+    printf("\nVetor organizado de forma crescente com Insertion Sort:\n");
+    for(i = 0; i < VALOR; i++) {
+        printf("%d - %d\n", i, copia[i]);
+    }
+}
+
+//função insertion sort decrescente
+void insertion_sort_decrescente() {
+    // copiar o vetor original para a cópia
+    for(i = 0; i < VALOR; i++) {
+        copia[i] = numeros[i];
+    }
+
+    int chave, j;
+    for(i = 1; i < VALOR; i++) {
+        chave = copia[i];
+        j = i - 1;
+        while(j >= 0 && copia[j] < chave) {
+            copia[j + 1] = copia[j];
+            j--;
+        }
+        copia[j + 1] = chave;
+    }
+
+    //printa os numeros organizados de forma decrescente
+    printf("\n------------------------------------------------------");
+    printf("\nVetor organizado de forma decrescente com Insertion Sort:\n");
+    for(i = 0; i < VALOR; i++) {
+        printf("%d - %d\n", i, copia[i]);
+    }
+}
+
+//inicializaçao do programa
+int main() {
+    // randomifica os numeros fornecidos pela funçao rand
+    srand(time(NULL));
+
+    //printa os numeros de forma desorganizada antes de realizar as organizaçoes
+    printf("\n------------------------------------------------------");
+    printf("\nVetor desorganizado:\n");
+    for(i = 0; i < VALOR; i++) {
+        numeros[i] = rand() % 100;
+        printf("%d - %d\n", i, numeros[i]);
+    }
+
+    // Ordenações com Bubble Sort
+    bubble_sort_crescente();
+    bubble_sort_decrescente();
+
+    // Ordenações com Insertion Sort
+    insertion_sort_crescente();
+    insertion_sort_decrescente();
+
+    return 0;
+}
