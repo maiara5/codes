@@ -1,14 +1,6 @@
-<div align="left">
-  <h1> # 👋 Olá, Me chamo Maiara Marques Ferreira!
+# 👋 Olá, Me chamo Maiara Marques Ferreira!
 
 <p> Sou uma estudante iniciando minha jornada no mundo da programação e atualmente estou no primeiro período de SI. Ainda estou aprendendo o básico, mas já descobri que programar pode ser desafiador e divertido ao mesmo tempo. 😄
-
-</p>
-</div>
-
-<div align="right">
-  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="120"/>
-</div>
 
 ---
 
