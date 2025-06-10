@@ -27,8 +27,4 @@
 
 ---
 
-## 🤝 Vamos aprender juntos?
-
-Se você também está começando ou quer compartilhar dicas, será um prazer trocar ideias!
-
 
