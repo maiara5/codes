@@ -10,7 +10,7 @@
 
 <div style="display: flex; justify-content: space-around; align-items: center;">
   <img src="imagens/1184 - Abaixo da Diagonal Principal.png" width="300">
-  <img src="imagens/11151 - Fibonacci Fácil.png" width="300">
+  <img src="imagens/1173 - Preenchimento de Vetor II.png" width="300">
   <img src="imagens/1153 - Fatorial Simples.png" width="300">
 </div>
 
