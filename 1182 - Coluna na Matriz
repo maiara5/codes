@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int c, i, j;
+    char t;
+    float matriz[12][12], resultado = 0.0;
+
+    scanf("%d", &c);
+    scanf(" %c", &t);
+
+    for(i = 0; i < 12; i++) {
+        for(j = 0; j < 12; j++) {
+            scanf("%f", &matriz[i][j]);
+        }
+    }
+
+    for(i = 0; i < 12; i++) {
+        resultado += matriz[i][c];
+    }
+
+    if(t == 'M') {
+        resultado /= 12.0;
+    }
+
+    printf("%.1f\n", resultado);
+
+    return 0;
+}
